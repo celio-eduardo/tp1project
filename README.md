@@ -67,6 +67,6 @@ Este projeto está licenciado sob a [Licença MIT](LICENSE). Sinta-se à vontade
 Para qualquer dúvida ou contato relacionado a este projeto, você pode entrar em contato com os desenvolvedores por meio dos seguintes meios:
 
 - Nome: Célio Eduardo e Lucas Alves Rodrigues
-- Email: celiofeduardo@gmail.com e XXXXXXXXXXXXXXXXX@XXXXX.XXX
+- Email: celiofeduardo@gmail.com e lalves547@gmail.com
 
 Obrigado por contribuir para o projeto de Técnicas de Programação 1!
