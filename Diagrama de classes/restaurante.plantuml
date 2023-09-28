@@ -1,0 +1,100 @@
+@startuml
+class Pessoa {
+  + nome: String
+  - endereco: String
+}
+
+class Cliente {
+  - telefone: String
+  + fazerPedido(pedido: Pedido): void
+  + realizarPagamento(pedido: Pedido, valorPago: float): boolean
+}
+
+class Funcionario {
+  - cpf: String
+  - salario: float
+}
+
+class Cozinheiro {
+  - especialidade: String
+  + prepararPedido(pedido: Pedido): void
+}
+
+class Garcom {
+  + anotarPedido(cliente: Cliente, itensPedido: List<ItemPedido>): Pedido
+}
+
+class Caixa {
+  + processarPagamento(pedido: Pedido, valorPago: float): boolean
+}
+
+class Restaurante {
+  + nome: String
+  + endereco: String
+  - cardapio: List<Prato>
+  - estoque: Estoque
+  + adicionarPrato(prato: Prato): void
+  + realizarPedido(cliente: Cliente, itensPedido: List<ItemPedido>): Pedido
+}
+
+class Prato {
+  + nome: String
+  + descricao: String
+  + preco: float
+  + contemIngrediente(ingrediente: Ingrediente, quantidade: int): boolean
+}
+
+class Estoque {
+  - ingredientes: List<Ingrediente>
+  + adicionarIngrediente(ingrediente: Ingrediente): void
+  + verificarQuantidade(ingrediente: Ingrediente): int
+}
+
+class Ingrediente {
+  - nome: String
+  - quantidade: int
+  - unidadeMedida: String
+}
+
+class Pedido {
+  - numero: int
+  - data: Date
+  - cliente: Cliente
+  - itensPedido: List<ItemPedido>
+  - status: String
+  + calcularTotal(): float
+  + getStatus(): String
+  + setStatus(status: String): void
+}
+
+enum StatusPedido {
+  PedidoAceito
+  PedidoSendoPreparado
+  Pronto
+  PedidoPago
+}
+
+class ItemPedido {
+  - quantidade: int
+  - prato: Prato
+}
+
+Restaurante --> Prato : Tem
+Prato --> Ingrediente : Contém
+Restaurante --> Estoque : Gerencia
+Cliente --> Pessoa
+Cliente --> Pedido : Faz
+Cliente --> Pedido : Realiza pagamento
+Pedido --> Cliente : Pertence a
+Pedido "1" --> "0..*" ItemPedido : Contém itens
+Pedido --> StatusPedido : Possui status
+Estoque --> Ingrediente : Contém
+Restaurante --> Garcom : Tem
+Restaurante --> Caixa : Tem
+Restaurante --> Cozinheiro : Tem
+Funcionario <|-- Cozinheiro
+Funcionario <|-- Garcom
+Funcionario <|-- Caixa
+Funcionario --> Pessoa
+@enduml
+x
