@@ -1,12 +1,16 @@
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
+ */
+package restaurant;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -15,6 +19,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 import javafx.scene.control.ScrollPane;
+
+/**
+ *
+ * @author lalve
+ */
+
 
 public class GerenciadorMesas extends Application {
 
@@ -101,13 +111,9 @@ public class GerenciadorMesas extends Application {
         mesaBox.setStyle("-fx-border-color: #dddddd; -fx-border-width: 1px; -fx-padding: 16px;");
 
         // Adicionando uma imagem à mesa
-        Image mesaImage = new Image("https://via.placeholder.com/50");
-        ImageView imageView = new ImageView(mesaImage);
-        imageView.setFitWidth(50);
-        imageView.setFitHeight(50);
-
+       
         mesaBox.getChildren().addAll(
-                imageView,
+ 
                 new Label("Mesa " + mesa.getNumero()),
                 new Label("Status: " + mesa.getStatus()),
                 acaoButton

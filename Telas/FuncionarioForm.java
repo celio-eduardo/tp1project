@@ -1,4 +1,11 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMain.java to edit this template
+ */
+package restaurant;
+
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -12,7 +19,14 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class Forms extends Application {
+/**
+ *
+ * @author lalve
+ */
+
+
+
+public class FuncionarioForm extends Application {
 
     @Override
     public void start(Stage primaryStage) {
